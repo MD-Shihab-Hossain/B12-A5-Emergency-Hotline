@@ -1,4 +1,4 @@
-//* responsive mobile menu
+//* responsive menu
 document.getElementById("cross-icon").addEventListener("click", function () {
   document.getElementById("cross-icon").classList.add("hidden");
   document.getElementById("menu-icon").classList.add("flex");
@@ -16,10 +16,12 @@ document.getElementById("menu-icon").addEventListener("click", function () {
   mobileMenu.classList.remove("hidden");
   mobileMenu.classList.add("flex");
 });
+
 //* function to get inner text
 function getInnerText(id) {
   return document.getElementById(id).innerText;
 }
+
 //* function for add event listener for increasing heart count
 function addEventListenerToIncreaseHeart(id) {
   document.getElementById(id).addEventListener("click", function () {
@@ -84,7 +86,6 @@ document.getElementById("clear-btn").addEventListener("click", function () {
   document.getElementById("card-body").innerHTML = "";
 });
 
-
 function copySectionFunctionality(btnId, numberId) {
   document.getElementById(btnId).addEventListener("click", function () {
     let copyCount = Number(getInnerText("copy-count"));
@@ -95,7 +96,7 @@ function copySectionFunctionality(btnId, numberId) {
     const input = document.createElement("input");
     input.value = number;
     document.body.appendChild(input);
-    
+
     input.select();
     document.execCommand("copy");
     document.body.removeChild(input);
